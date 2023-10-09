@@ -5,6 +5,7 @@
 #include "../Commands/InternalCommands.h"
 #include "../DataStructs/TimingStats.h"
 #include "../DataTypes/EventValueSource.h"
+#include "../ESPEasyCore/ESPEasyGPIO_custom.h"
 #include "../ESPEasyCore/ESPEasy_backgroundtasks.h"
 #include "../ESPEasyCore/Serial.h"
 #include "../Globals/Cache.h"
@@ -86,6 +87,9 @@ bool processNextEvent() {
    Rules processing
  \*********************************************************************************************/
 void rulesProcessing(const String& event) {
+  
+  Event_Hook(event);
+  
   if (!Settings.UseRules) {
     return;
   }

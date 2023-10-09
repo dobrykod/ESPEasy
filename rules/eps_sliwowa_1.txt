@@ -1,0 +1,42 @@
+on System#Boot do
+ McpModeRange,17,30,1
+ McpModeRange,65,70,1
+ McpModeRange,72,73,1
+ McpModeRange,75,80,1
+ McpModeRange,97,99,1
+ McpModeRange,103,105,1
+ McpMode,108,1
+ McpGpio,9,1
+ McpGpio,32,1
+ McpGpio,117,0
+ McpGpio,118,0
+ McpGpio,119,0
+ McpGpio,120,0
+endon
+
+on Clock#Time=All,07:10 do
+ event,jadalnia=up,1
+ event,kuchnia_n=up,1
+ event,kuchnia_e=up,1
+endon
+
+on Clock#Time=All,07:50 do
+ event,jadalnia=up,60
+ event,kuchnia_n=up,60
+ event,kuchnia_e=up,60
+ event,salon=up,1
+endon
+
+on Clock#Time=All,9:00 do
+ event,poddasze_n=up,1
+endon
+
+on Clock#Time=All,10:00 do
+ event,poddasze_s=up,1
+ event,poddasze_n=up,60
+endon
+
+on Clock#Time=All,11:00 do
+ event,salon=up,60
+ event,poddasze_s=up,60
+endon

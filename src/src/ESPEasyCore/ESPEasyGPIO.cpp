@@ -1,5 +1,6 @@
 
 #include "../ESPEasyCore/ESPEasyGPIO.h"
+#include "../ESPEasyCore/ESPEasyGPIO_custom.h"
 
 /****************************************************************************/
 // Central functions for GPIO handling
@@ -462,6 +463,8 @@ void GPIO_Monitor10xSec()
       it->second.forceMonitor = 0; //reset flag
     }
   }
+  
+  GPIO_Monitor10xSec_MyHome();
 }
 
 // prefix should be either "GPIO", "PCF", "MCP"
