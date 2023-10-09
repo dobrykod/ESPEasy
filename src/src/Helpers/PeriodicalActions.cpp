@@ -229,7 +229,7 @@ void runEach30Seconds()
     }
 //    log += F(" ListenInterval ");
 //    log += WiFi.getListenInterval();
-    addLogMove(LOG_LEVEL_INFO, log);
+//    addLogMove(LOG_LEVEL_INFO, log);
 #if FEATURE_DEFINE_SERIAL_CONSOLE_PORT
 //    addLogMove(LOG_LEVEL_INFO,  ESPEASY_SERIAL_CONSOLE_PORT.getLogString());
 #endif
